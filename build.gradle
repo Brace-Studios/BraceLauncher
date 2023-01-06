@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = maven_group
+version = project_version
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
+
+java {
+    archivesBaseName = project.archives_base_name
+}
+
+jar {
+    from("LICENSE")
+    manifest {
+        attributes(
+                'Main-Class': 'dev.dubhe.brace.launcher.Launcher'
+        )
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
